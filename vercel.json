@@ -1,13 +1,17 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
   "outputDirectory": "public",
+  "buildCommand": "npm run build",
   "functions": {
     "api/lambda.php": {
       "runtime": "vercel-php@0.7.4"
     }
   },
   "rewrites": [
-    { "source": "/(.*)", "destination": "/api/lambda.php" }
-  ],
-  "buildCommand": "echo skip..."
+    {
+      "source": "/(.*)",
+      "destination": "/api/lambda.php"
+    }
+  ]
 }
